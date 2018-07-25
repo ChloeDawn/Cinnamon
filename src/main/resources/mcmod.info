@@ -1,0 +1,13 @@
+[
+  {
+    "modid": "cinnamon",
+    "name": "Cinnamon",
+    "description": "Kotlin and Java library for Minecraft Forge.",
+    "url": "https://git.io/vhwej",
+    "version": "@cinnamon.version@",
+    "authorList": [ "InsomniaKitten" ]
+    "dependencies": [ "forgelin@[@forgelin.version@,)" ],
+    "requiredMods": [ "forgelin@[@forgelin.version@,)" ],
+    "useDependencyInformation": true
+  }
+]

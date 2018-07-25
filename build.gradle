@@ -1,0 +1,70 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+buildscript {
+  repositories {
+    jcenter()
+    maven { url = 'https://files.minecraftforge.net/maven' }
+  }
+  dependencies {
+    classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51'
+  }
+}
+
+plugins {
+  id 'org.jetbrains.dokka' version '0.9.17'
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'kotlin'
+
+def libVersion = '1.0.0'
+def mcfVersion = '1.12.2-14.23.4.2705'
+def mcpMappings = 'snapshot_20180724'
+def forgelinVersion = '1.6.0'
+def ctmVersion = 'MC1.12-0.3.0.15'
+def hwylaVersion = '1.8.26-B41_1.12.2'
+def jeiVersion = '1.12.2:4.10.0.198'
+def baublesVersion = '1.12-1.5.2'
+
+version = libVersion
+group = 'net.cinnamon'
+archivesBaseName = 'Cinnamon'
+sourceCompatibility = 1.8
+
+minecraft {
+  version = mcfVersion
+  mappings = mcpMappings
+  runDir = 'run'
+  replaceIn 'ModelVillage.java'
+  replace '%cinnamon.version%', libVersion
+}
+
+repositories {
+  jcenter()
+  maven { url = 'http://dvs1.progwml6.com/files/maven' }
+  maven { url = 'http://maven.tterrag.com' }
+  maven { url = 'http://tehnut.info/maven' }
+  maven { url = 'https://maven.shadowfacts.net' }
+  maven { url = 'https://maven.thiakil.com' }
+}
+
+dependencies {
+  compile "com.azanor.baubles:Baubles:$baublesVersion"
+  compile "mcp.mobius.waila:Hwyla:$hwylaVersion"
+  compile "mezz.jei:jei_$jeiVersion"
+  compile "net.shadowfacts:Forgelin:$forgelinVersion"
+  compile "team.chisel.ctm:CTM:$ctmVersion"
+}
+
+processResources {
+  filter ReplaceTokens, tokens: [
+    'cinnamon.version': libVersion,
+    'forgelin.version': forgelinVersion
+  ]
+}
+
+dokka {
+  outputFormat = 'html'
+  outputDirectory = "$buildDir/javadoc"
+}
