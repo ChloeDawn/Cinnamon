@@ -88,7 +88,6 @@ val Item.usageStats: StatBase? get() = StatList.getObjectUseStats(this)
  */
 val Item.breakStats: StatBase? get() = StatList.getObjectBreakStats(this)
 
-
 /**
  * Safely queries the [StatBase] mapped to this receiver in [StatList.OBJECTS_PICKED_UP_STATS]
  * @return `null` if no [StatBase] exists for the receiver's [Item.id]
@@ -96,7 +95,6 @@ val Item.breakStats: StatBase? get() = StatList.getObjectBreakStats(this)
  * @since 1.0.0
  */
 val Item.pickedUpStats: StatBase? get() = StatList.getObjectsPickedUpStats(this)
-
 
 /**
  * Safely queries the [StatBase] mapped to this receiver in [StatList.OBJECTS_DROPPED_STATS]

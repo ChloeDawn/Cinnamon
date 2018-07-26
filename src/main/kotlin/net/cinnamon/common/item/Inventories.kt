@@ -22,6 +22,7 @@ operator fun IInventory.set(slot: Int, stack: ItemStack) =
 operator fun InventoryPlayer.plusAssign(stack: ItemStack) {
     addItemStackToInventory(stack)
 }
+
 @JvmName("removeStack")
 operator fun InventoryPlayer.minusAssign(stack: ItemStack) {
     deleteStack(stack)

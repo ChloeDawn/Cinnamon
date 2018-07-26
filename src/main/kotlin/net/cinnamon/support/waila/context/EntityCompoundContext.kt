@@ -6,8 +6,8 @@ import net.minecraft.nbt.NBTTagCompound
 import net.minecraft.world.World
 
 class EntityCompoundContext(
-        val player: EntityPlayerMP,
-        val entity: Entity,
-        var compound: NBTTagCompound,
-        val world: World
+    val player: EntityPlayerMP,
+    val entity: Entity,
+    var compound: NBTTagCompound,
+    val world: World
 )

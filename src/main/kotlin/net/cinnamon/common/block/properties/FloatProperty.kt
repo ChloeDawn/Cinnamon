@@ -1,6 +1,5 @@
 package net.cinnamon.common.block.properties
 
-
 import com.google.common.base.Optional
 import net.cinnamon.common.base.hashCodeOf
 import net.minecraft.block.properties.PropertyHelper
@@ -19,7 +18,7 @@ class FloatProperty(name: String, min: Float, max: Float) : PropertyHelper<Float
                 do {
                     curr += 0.1F
                     set += curr
-                } while(curr < max)
+                } while (curr < max)
                 allowedValues = set.toSet()
             }
         }

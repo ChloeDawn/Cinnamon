@@ -7,9 +7,9 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
 class BlockCompoundContext(
-        val player: EntityPlayerMP,
-        val tile: TileEntity,
-        var compound: NBTTagCompound,
-        val world: World,
-        val pos: BlockPos
+    val player: EntityPlayerMP,
+    val tile: TileEntity,
+    var compound: NBTTagCompound,
+    val world: World,
+    val pos: BlockPos
 )

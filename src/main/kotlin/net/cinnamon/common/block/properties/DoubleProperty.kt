@@ -1,6 +1,5 @@
 package net.cinnamon.common.block.properties
 
-
 import com.google.common.base.Optional
 import net.cinnamon.common.base.hashCodeOf
 import net.minecraft.block.properties.PropertyHelper

@@ -14,8 +14,8 @@ public final class SidedProxy {
     private SidedProxy() {}
 
     public static <V, CLIENT extends V, SERVER extends V> V of(
-        Supplier<Supplier<CLIENT>> client,
-        Supplier<Supplier<SERVER>> server
+        final Supplier<Supplier<CLIENT>> client,
+        final Supplier<Supplier<SERVER>> server
     ) {
         final Side side = FMLCommonHandler.instance().getSide();
         switch (side) {

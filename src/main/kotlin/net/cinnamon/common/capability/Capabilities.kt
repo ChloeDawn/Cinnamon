@@ -29,15 +29,15 @@ lateinit var energyCapability: Capability<IEnergyStorage>
 
 @JvmSynthetic
 operator fun <T> ICapabilityProvider.get(capability: Capability<T>, side: EnumFacing? = null): T? =
-        getCapability(capability, side)
+    getCapability(capability, side)
 
 @JvmSynthetic
 operator fun <T> ICapabilityProvider.contains(capability: Capability<T>) =
-        hasCapability(capability, null)
+    hasCapability(capability, null)
 
 @JvmSynthetic
 infix fun <T> ICapabilityProvider.has(capability: Capability<T>) =
-        hasCapability(capability, null)
+    hasCapability(capability, null)
 
 @JvmSynthetic
 fun <T> ICapabilityProvider.has(capability: Capability<T>, side: EnumFacing?) =
@@ -45,7 +45,7 @@ fun <T> ICapabilityProvider.has(capability: Capability<T>, side: EnumFacing?) =
 
 @JvmSynthetic
 infix fun <T> Capability<T>.from(provider: ICapabilityProvider): T? =
-        provider.getCapability(this, null)
+    provider.getCapability(this, null)
 
 @JvmSynthetic
 fun <T> Capability<T>.from(provider: ICapabilityProvider, side: EnumFacing?): T? =

@@ -23,27 +23,27 @@ private val UPPER_CAMEL_MATCHER      = (NON_EMPTY                       + NO_UND
 
 val String.caseFormat
     get() = when {
-        isLowerHyphen()     -> CaseFormat.LOWER_HYPHEN
+        isLowerHyphen() -> CaseFormat.LOWER_HYPHEN
         isLowerUnderscore() -> CaseFormat.LOWER_UNDERSCORE
         isUpperUnderscore() -> CaseFormat.UPPER_UNDERSCORE
-        isLowerCamel()      -> CaseFormat.LOWER_CAMEL
-        isUpperCamel()      -> CaseFormat.UPPER_CAMEL
+        isLowerCamel() -> CaseFormat.LOWER_CAMEL
+        isUpperCamel() -> CaseFormat.UPPER_CAMEL
         else -> error("Unable to determine CaseFormat for String \"$this\"")
     }
 
 fun String.toCaseFormat(format: CaseFormat): String = caseFormat.to(format, this)
 
-fun String.isLowerHyphen()     = matches(LOWER_HYPHEN_MATCHER)
+fun String.isLowerHyphen() = matches(LOWER_HYPHEN_MATCHER)
 fun String.isLowerUnderscore() = matches(LOWER_UNDERSCORE_MATCHER)
 fun String.isUpperUnderscore() = matches(UPPER_UNDERSCORE_MATCHER)
-fun String.isLowerCamel()      = matches(LOWER_CAMEL_MATCHER)
-fun String.isUpperCamel()      = matches(UPPER_CAMEL_MATCHER)
+fun String.isLowerCamel() = matches(LOWER_CAMEL_MATCHER)
+fun String.isUpperCamel() = matches(UPPER_CAMEL_MATCHER)
 
-fun String.toLowerHyphen()     = toCaseFormat(CaseFormat.LOWER_HYPHEN)
+fun String.toLowerHyphen() = toCaseFormat(CaseFormat.LOWER_HYPHEN)
 fun String.toLowerUnderscore() = toCaseFormat(CaseFormat.LOWER_UNDERSCORE)
 fun String.toUpperUnderscore() = toCaseFormat(CaseFormat.UPPER_UNDERSCORE)
-fun String.toLowerCamel()      = toCaseFormat(CaseFormat.LOWER_CAMEL)
-fun String.toUpperCamel()      = toCaseFormat(CaseFormat.UPPER_CAMEL)
+fun String.toLowerCamel() = toCaseFormat(CaseFormat.LOWER_CAMEL)
+fun String.toUpperCamel() = toCaseFormat(CaseFormat.UPPER_CAMEL)
 
 fun String.toRootLowerCase() = toLowerCase(Locale.ROOT)
 fun String.toRootUpperCase() = toUpperCase(Locale.ROOT)
