@@ -38,7 +38,6 @@ minecraft {
 }
 
 repositories {
-  jcenter()
   maven { url = 'http://dvs1.progwml6.com/files/maven' }
   maven { url = 'http://maven.tterrag.com' }
   maven { url = 'http://tehnut.info/maven' }
