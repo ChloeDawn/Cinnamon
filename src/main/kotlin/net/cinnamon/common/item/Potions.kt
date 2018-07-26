@@ -15,8 +15,8 @@ val PotionType.isEmpty
     get() = PotionTypes.EMPTY == this
 
 val PotionType.creatorModId: String
-    get() = potionTypeRegistry.getKey(this)?.resourceDomain
-            ?: registryName?.resourceDomain.toString()
+    get() = potionTypeRegistry.getKey(this)?.namespace
+            ?: registryName?.namespace.toString()
 
 @JvmName("getPotionEffects")
 @JvmOverloads

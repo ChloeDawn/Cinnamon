@@ -12,10 +12,10 @@ open class ItemGroup @JvmOverloads constructor(
     private val icon: () -> ItemStack
 ) : CreativeTabs("") {
     @SideOnly(Side.CLIENT)
-    override fun getTranslatedTabLabel() = "item_group.$label.label"
+    override fun getTranslationKey() = "item_group.$label.label"
 
     @SideOnly(Side.CLIENT)
-    override fun getTabIconItem() = icon()
+    override fun createIcon() = icon()
 
     @SideOnly(Side.CLIENT)
     override fun getBackgroundImageName() = when {

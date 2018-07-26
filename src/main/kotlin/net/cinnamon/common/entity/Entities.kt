@@ -97,6 +97,6 @@ fun EntityPlayer.rayTraceLookVec(): RayTraceResult? {
     val reach = reachDistance
     val start = getPositionEyes(1.0F)
     val look = getLook(1.0F)
-    val end = start.addVector(look.x * reach, look.y * reach, look.z * reach)
+    val end = start.add(look.x * reach, look.y * reach, look.z * reach)
     return world.rayTraceBlocks(start, end, false, true, false)
 }
