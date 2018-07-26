@@ -36,8 +36,6 @@ minecraft {
   version = mcfVersion
   mappings = mcpMappings
   runDir = 'run'
-  replaceIn 'ModelVillage.java'
-  replace '%cinnamon.version%', libVersion
 }
 
 repositories {
