@@ -1,3 +1,5 @@
+@file:JvmName("SidedProxyKt")
+
 package net.cinnamon.support.fml
 
 import net.minecraftforge.fml.common.FMLCommonHandler
