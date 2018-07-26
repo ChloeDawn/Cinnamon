@@ -1,3 +1,5 @@
+@file:JvmName("Attributes")
+
 package net.cinnamon.common.entity
 
 import net.minecraft.entity.EntityLivingBase
