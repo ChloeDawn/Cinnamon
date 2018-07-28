@@ -5,6 +5,7 @@ package net.cinnamon.common.serializable.json
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
+import com.google.gson.JsonNull
 
 /**
  * Creates a new empty [JsonArray]
@@ -20,8 +21,9 @@ fun jsonArrayOf() = JsonArray()
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Any) = JsonArray().also {
+fun jsonArrayOf(vararg values: Any?) = JsonArray().also {
     for (obj in values) when (obj) {
+        null -> it.add(JsonNull.INSTANCE)
         is Boolean -> it.add(obj)
         is Char -> it.add(obj)
         is Number -> it.add(obj)
@@ -121,6 +123,7 @@ fun jsonArrayOf(vararg values: JsonElement) = JsonArray().also { values.forEach(
 @JvmSynthetic
 fun jsonArrayOf(values: Array<*>) = JsonArray().also {
     for (obj in values) when (obj) {
+        null -> it.add(JsonNull.INSTANCE)
         is Boolean -> it.add(obj)
         is Char -> it.add(obj)
         is Number -> it.add(obj)
