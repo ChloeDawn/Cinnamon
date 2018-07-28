@@ -83,29 +83,63 @@ fun tagListOf(vararg values: NBTTagCompound) = NBTTagList().apply {
 }
 
 /**
- * Returns an [NBTTagList] containing the given [Iterable] elements
- * @deprecated Will be migrated to safer type specific functions eventually
- * @throws UnsupportedTagTypeException If the element type is not a supported type
+ * Converts the [Array]<[NBTBase]> receiver to an [NBTTagList] of [NBTBase]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
-@Deprecated("Will be migrated to safer type specific functions eventually")
-inline fun <reified T> Iterable<T>.toTagList() = asSequence().run {
-    NBTTagList().also { list ->
-        when (T::class.java) {
-            Boolean::class.java -> map { tagByteOf(it as Boolean) }
-            Byte::class.java -> map { tagByteOf(it as Byte) }
-            Short::class.java -> map { tagShortOf(it as Short) }
-            Int::class.java -> map { tagIntOf(it as Int) }
-            Long::class.java -> map { tagLongOf(it as Long) }
-            Float::class.java -> map { tagFloatOf(it as Float) }
-            Double::class.java -> map { tagDoubleOf(it as Double) }
-            ByteArray::class.java -> map { tagByteArrayOf((it as ByteArray)) }
-            String::class.java -> map { tagStringOf(it as String) }
-            NBTTagList::class.java -> map { it as NBTBase }
-            NBTTagCompound::class.java -> map { it as NBTTagCompound }
-            IntArray::class.java -> map { tagIntArrayOf(it as IntArray) }
-            LongArray::class.java -> map { tagLongArrayOf(it as LongArray) }
-            NBTBase::class.java -> map { it as NBTBase }
-            else -> throw UnsupportedTagTypeException(T::class.java.name, "toTagList")
-        }.forEach(list::appendTag)
-    }
-}
+fun Array<NBTBase>.toTagList() = tagListOf(*this)
+
+/**
+ * Converts the [ByteArray] receiver to an [NBTTagList] of [NBTTagByte]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun ByteArray.toTagList() = tagListOf(*map(::tagByteOf).toTypedArray())
+
+/**
+ * Converts the [ShortArray] receiver to an [NBTTagList] of [NBTTagShort]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun ShortArray.toTagList() = tagListOf(*map(::tagShortOf).toTypedArray())
+
+/**
+ * Converts the [IntArray] receiver to an [NBTTagList] of [NBTTagInt]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun IntArray.toTagList() = tagListOf(*map(::tagIntOf).toTypedArray())
+/**
+ * Converts the [LongArray] receiver to an [NBTTagList] of [NBTTagLong]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun LongArray.toTagList() = tagListOf(*map(::tagLongOf).toTypedArray())
+
+/**
+ * Converts the [FloatArray] receiver to an [NBTTagList] of [NBTTagFloat]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun FloatArray.toTagList() = tagListOf(*map(::tagFloatOf).toTypedArray())
+
+/**
+ * Converts the [DoubleArray] receiver to an [NBTTagList] of [NBTTagDouble]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun DoubleArray.toTagList() = tagListOf(*map(::tagDoubleOf).toTypedArray())
+
+/**
+ * Converts the [Array]<[String]> receiver to an [NBTTagList] of [NBTTagString]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun Array<String>.toTagList() = tagListOf(*map(::tagStringOf).toTypedArray())
+
+/**
+ * Converts the [BooleanArray] receiver to an [NBTTagList] of [NBTTagByte]s
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun BooleanArray.toTagList() = tagListOf(*map(::tagByteOf).toTypedArray())
