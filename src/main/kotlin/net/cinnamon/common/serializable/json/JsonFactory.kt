@@ -160,6 +160,7 @@ fun json(json: JsonObjectFactory.() -> Unit) =
 fun json(json: Consumer<JsonObjectFactory>) =
     JsonObject().also { json.accept(JsonObjectFactory(it)) }
 
+@Suppress("NOTHING_TO_INLINE")
 class JsonObjectFactory(private val jsonObject: JsonObject) {
     /**
      * Appends the given Boolean [value] to the receiver key in the [jsonObject]
@@ -171,6 +172,22 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
         jsonObject.addProperty(this, value)
 
     /**
+     * Appends the given Boolean [value] to the receiver key in the [jsonObject]
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(value: Boolean) = this(value)
+
+    /**
+     * Appends the given Boolean [value] to the receiver key in the [jsonObject]
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(value: Boolean) = this(value)
+
+    /**
      * Appends the given Char [value] to the receiver key in the [jsonObject] delegate
      * @author InsomniaKitten
      * @since 0.1.0
@@ -178,6 +195,22 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
     @JvmName("add")
     operator fun String.invoke(value: Char) =
         jsonObject.addProperty(this, value)
+
+    /**
+     * Appends the given Char [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(value: Char) = this(value)
+
+    /**
+     * Appends the given Char [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(value: Char) = this(value)
 
     /**
      * Appends the given Number [value] to the receiver key in the [jsonObject] delegate
@@ -189,6 +222,22 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
         jsonObject.addProperty(this, value)
 
     /**
+     * Appends the given Number [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(value: Number) = this(value)
+
+    /**
+     * Appends the given Number [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(value: Number) = this(value)
+
+    /**
      * Appends the given String [value] to the receiver key in the [jsonObject] delegate
      * @author InsomniaKitten
      * @since 0.1.0
@@ -196,6 +245,22 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
     @JvmName("add")
     operator fun String.invoke(value: String) =
         jsonObject.addProperty(this, value)
+
+    /**
+     * Appends the given String [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(value: String) = this(value)
+
+    /**
+     * Appends the given String [value] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(value: String) = this(value)
 
     /**
      * Appends the [JsonObject] generated from the factory [obj] to the receiver key in the [jsonObject] delegate
@@ -206,6 +271,22 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
     @JvmSynthetic
     operator fun String.invoke(obj: JsonObjectFactory.() -> Unit) =
         jsonObject.add(this, JsonObject().also { obj.invoke(JsonObjectFactory(it)) })
+
+    /**
+     * Appends the [JsonObject] generated from the factory [obj] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(noinline obj: JsonObjectFactory.() -> Unit) = this(obj)
+
+    /**
+     * Appends the [JsonObject] generated from the factory [obj] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(noinline obj: JsonObjectFactory.() -> Unit) = this(obj)
 
     /**
      * Appends the [JsonObject] generated from the factory [obj] to the receiver key in the [jsonObject] delegate
@@ -230,8 +311,42 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @author InsomniaKitten
      * @since 0.1.0
      */
+    @JvmSynthetic
+    inline fun String.to(vararg values: Any?) = this(*values)
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline fun String.with(vararg values: Any?) = this(*values)
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
     @JvmName("arrayKt")
     @JvmSynthetic
     operator fun String.invoke(values: Array<Any?>) =
         jsonObject.add(this, values.toJson())
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    @JvmName("toKt")
+    inline fun String.to(values: Array<Any?>) = this(values)
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    @JvmName("withKt")
+    inline fun String.with(values: Array<Any?>) = this(values)
 }
