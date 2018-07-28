@@ -6,6 +6,7 @@ package net.cinnamon.common.serializable.json
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonNull
+import org.jetbrains.annotations.Nullable
 
 /**
  * Creates a new empty [JsonArray]
@@ -21,14 +22,13 @@ fun jsonArrayOf() = JsonArray()
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Any?) = JsonArray().also {
+fun jsonArrayOf(@Nullable vararg values: Any?) = JsonArray().also {
     for (obj in values) when (obj) {
         null -> it.add(JsonNull.INSTANCE)
         is Boolean -> it.add(obj)
         is Char -> it.add(obj)
         is Number -> it.add(obj)
         is String -> it.add(obj)
-        is JsonArray -> it.add(obj)
         is JsonElement -> it.add(obj)
         else -> error("Unsupported type $obj for JsonArray")
     }
@@ -128,7 +128,6 @@ fun jsonArrayOf(values: Array<*>) = JsonArray().also {
         is Char -> it.add(obj)
         is Number -> it.add(obj)
         is String -> it.add(obj)
-        is JsonArray -> it.add(obj)
         is JsonElement -> it.add(obj)
         else -> error("Unsupported type $obj for JsonArray")
     }
