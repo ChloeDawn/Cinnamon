@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ColorProvider - </title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">net.cinnamon.client</a>&nbsp;/&nbsp;<a href="./index.html">ColorProvider</a><br/>
+<br/>
+<h1>ColorProvider</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">ColorProvider</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">IBlockColor</span><span class="symbol">, </span><span class="identifier">IItemColor</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ColorProvider</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="color-multiplier.html">colorMultiplier</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">colorMultiplier</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/state">state</span><span class="symbol">:</span>&nbsp;<span class="identifier">IBlockState</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/world">world</span><span class="symbol">:</span>&nbsp;<span class="identifier">IBlockAccess</span><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/pos">pos</span><span class="symbol">:</span>&nbsp;<span class="identifier">BlockPos</span><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/tintIndex">tintIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">colorMultiplier</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.item.ItemStack, kotlin.Int)/stack">stack</span><span class="symbol">:</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$colorMultiplier(net.minecraft.item.ItemStack, kotlin.Int)/tintIndex">tintIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-color.html">getColor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getColor</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/state">state</span><span class="symbol">:</span>&nbsp;<span class="identifier">IBlockState</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/world">world</span><span class="symbol">:</span>&nbsp;<span class="identifier">IBlockAccess</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/pos">pos</span><span class="symbol">:</span>&nbsp;<span class="identifier">BlockPos</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.block.state.IBlockState, net.minecraft.world.IBlockAccess, net.minecraft.util.math.BlockPos, kotlin.Int)/tintIndex">tintIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getColor</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.item.ItemStack, kotlin.Int)/stack">stack</span><span class="symbol">:</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">, </span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(net.minecraft.item.ItemStack, kotlin.Int)/tintIndex">tintIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getColor</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.client.ColorProvider$getColor(kotlin.Int)/tintIndex">tintIndex</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../net.cinnamon.common.base/kotlin.-any/hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">.</span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../net.cinnamon.common.base/kotlin.-any/to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">.</span><span class="identifier">toString</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.base$toString(kotlin.Any, kotlin.Function1((com.google.common.base.MoreObjects.ToStringHelper, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">ToStringHelper</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

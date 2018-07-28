@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ContextFunction - </title>
+<link rel="stylesheet" href="../style.css">
+</HEAD>
+<BODY>
+<a href="index.html">net.cinnamon.support.waila</a>&nbsp;/&nbsp;<a href="./-context-function.html">ContextFunction</a><br/>
+<br/>
+<h1>ContextFunction</h1>
+<code><span class="keyword">interface </span><span class="identifier">ContextFunction</span><span class="symbol">&lt;</span><span class="identifier">K</span><span class="symbol">, </span><span class="identifier">V</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Function</span><span class="symbol">&lt;</span><a href="-context-function.html#K"><span class="identifier">K</span></a><span class="symbol">,</span>&nbsp;<a href="-context-function.html#V"><span class="identifier">V</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">IWailaDataProvider</span><span class="symbol">, </span><span class="identifier">IWailaEntityProvider</span></code>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../net.cinnamon.common.base/kotlin.-any/hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">.</span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../net.cinnamon.common.base/kotlin.-any/to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">.</span><span class="identifier">toString</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.base$toString(kotlin.Any, kotlin.Function1((com.google.common.base.MoreObjects.ToStringHelper, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">ToStringHelper</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../net.cinnamon.support.waila.function/-entity-function/index.html">EntityFunction</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EntityFunction</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-context-function.html"><span class="identifier">ContextFunction</span></a><span class="symbol">&lt;</span><a href="../net.cinnamon.support.waila.context/-entity-context/index.html"><span class="identifier">EntityContext</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">Entity</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../net.cinnamon.support.waila.function/-item-function/index.html">ItemFunction</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ItemFunction</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-context-function.html"><span class="identifier">ContextFunction</span></a><span class="symbol">&lt;</span><a href="../net.cinnamon.support.waila.context/-item-context/index.html"><span class="identifier">ItemContext</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

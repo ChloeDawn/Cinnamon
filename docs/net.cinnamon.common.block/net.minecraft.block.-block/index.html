@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.cinnamon.common.block.net.minecraft.block.Block - </title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">net.cinnamon.common.block</a>&nbsp;/&nbsp;<a href="./index.html">net.minecraft.block.Block</a><br/>
+<br/>
+<h3>Extensions for net.minecraft.block.Block</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-fluid.html">getFluid</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">getFluid</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Fluid</span><span class="symbol">?</span></code>
+<p>Queries <a href="#">FluidRegistry.fluidBlocks</a> to find a <a href="#">Fluid</a> mapped to this receiver
+If no registered <a href="#">Fluid</a> is mapped to the receiver, returns <code>null</code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="id.html">id</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Queries <a href="#">Block.REGISTRY</a> to determine the ID of the receiver</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">isEmpty</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Compares the receiver <a href="#">Block</a> to <a href="#">Blocks.AIR</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-fluid-block.html">isFluidBlock</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">isFluidBlock</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determines if there is a registered <a href="#">Fluid</a> mapped to this receiver</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-not-empty.html">isNotEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">isNotEmpty</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Compares the receiver <a href="#">Block</a> to <a href="#">Blocks.AIR</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="item.html">item</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">item</span><span class="symbol">: </span><span class="identifier">Item</span></code>
+<p>Queries <a href="#">Item.BLOCK_TO_ITEM</a> to find an <a href="#">Item</a> mapped to this receiver
+If no registered <a href="#">Item</a> is mapped to the receiver, returns <a href="#">Items.AIR</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="stats.html">stats</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Block</span><span class="symbol">.</span><span class="identifier">stats</span><span class="symbol">: </span><span class="identifier">StatBase</span><span class="symbol">?</span></code>
+<p>Queries the <a href="#">StatBase</a> mapped to this receiver in <a href="#">StatList.BLOCKS_STATS</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

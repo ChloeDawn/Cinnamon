@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>net.cinnamon.common.item.net.minecraft.item.ItemStack - </title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">net.cinnamon.common.item</a>&nbsp;/&nbsp;<a href="./index.html">net.minecraft.item.ItemStack</a><br/>
+<br/>
+<h3>Extensions for net.minecraft.item.ItemStack</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="can-repair.html">canRepair</a></p>
+</td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">canRepair</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$canRepair(net.minecraft.item.ItemStack, net.minecraft.item.ItemStack)/repairable">repairable</span><span class="symbol">:</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>An inverse of <a href="is-repairable.html">ItemStack.isRepairable</a>, where the receiver <a href="#">ItemStack</a> is the repairer</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int)/count">count</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ItemStack</span></code>
+<p>Copies the receiver <a href="#">ItemStack</a>, setting its count to the given <a href="copy.html#net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int)/count">count</a>
+Returns <a href="../empty-item-stack.html">emptyItemStack</a> if the given <a href="copy.html#net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int)/count">count</a> is 0</p>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int, kotlin.Int)/count">count</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int, kotlin.Int)/meta">meta</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ItemStack</span></code>
+<p>Copies the receiver <a href="#">ItemStack</a>, setting its count to the given <a href="copy.html#net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int, kotlin.Int)/count">count</a>
+Also sets its metadata to the given <a href="copy.html#net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int, kotlin.Int)/meta">meta</a> value
+Returns <a href="../empty-item-stack.html">emptyItemStack</a> if the given <a href="copy.html#net.cinnamon.common.item$copy(net.minecraft.item.ItemStack, kotlin.Int, kotlin.Int)/count">count</a> is 0</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="creator-mod-id.html">creatorModId</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">creatorModId</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="eqv-hash.html">eqvHash</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">eqvHash</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tooltip.html">getTooltip</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">getTooltip</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$getTooltip(net.minecraft.item.ItemStack, net.minecraft.entity.player.EntityPlayer, kotlin.Boolean)/player">player</span><span class="symbol">:</span>&nbsp;<span class="identifier">EntityPlayer</span><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="net.cinnamon.common.item$getTooltip(net.minecraft.item.ItemStack, net.minecraft.entity.player.EntityPlayer, kotlin.Boolean)/advanced">advanced</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">getTooltip</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$getTooltip(net.minecraft.item.ItemStack, net.minecraft.client.util.ITooltipFlag)/flag">flag</span><span class="symbol">:</span>&nbsp;<span class="identifier">ITooltipFlag</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-eqv-to.html">isEqvTo</a></p>
+</td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">isEqvTo</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$isEqvTo(net.minecraft.item.ItemStack, net.minecraft.item.ItemStack)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-not-empty.html">isNotEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">isNotEmpty</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-repairable.html">isRepairable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">ItemStack</span><span class="symbol">.</span><span class="identifier">isRepairable</span><span class="symbol">(</span><span class="identifier" id="net.cinnamon.common.item$isRepairable(net.minecraft.item.ItemStack, net.minecraft.item.ItemStack)/repairer">repairer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ItemStack</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether this <a href="#">ItemStack</a> is repairable in an anvil</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
