@@ -211,7 +211,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      */
     @JvmName("arrayKt")
     @JvmSynthetic
-    operator fun String.invoke(values: Array<Any?>) =
+    operator fun String.invoke(values: Array<out Any?>) =
         jsonObject.add(this, values.toJsonArray())
 
     /**
@@ -221,7 +221,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      */
     @JvmSynthetic
     @JvmName("toKt")
-    inline fun String.to(values: Array<Any?>) = this(values)
+    inline infix fun String.to(values: Array<out Any?>) = this(values)
 
     /**
      * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
@@ -230,5 +230,30 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      */
     @JvmSynthetic
     @JvmName("withKt")
-    inline fun String.with(values: Array<Any?>) = this(values)
+    inline infix fun String.with(values: Array<out Any?>) = this(values)
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmName("array")
+    operator fun String.invoke(values: Collection<Any?>) =
+        jsonObject.add(this, values.toTypedArray().toJsonArray())
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.to(values: Collection<Any?>) = this(values)
+
+    /**
+     * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
+     * @author InsomniaKitten
+     * @since 0.1.0
+     */
+    @JvmSynthetic
+    inline infix fun String.with(values: Collection<Any?>) = this(values)
 }
