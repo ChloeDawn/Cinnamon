@@ -27,9 +27,8 @@ private annotation class NBTDslMarker
 @NBTDslMarker
 @JvmName("createTagCompound")
 @JvmSynthetic
-fun tagCompound(compound: TagCompoundFactory.() -> Unit) {
+fun tagCompound(compound: TagCompoundFactory.() -> Unit) =
     tagCompoundOf().also { compound.invoke(TagCompoundFactory(it)) }
-}
 
 /**
  * A factory method for creating an [NBTTagCompound]. The consumer function parameter is
@@ -40,9 +39,8 @@ fun tagCompound(compound: TagCompoundFactory.() -> Unit) {
  */
 @NBTDslMarker
 @JvmName("createTagCompound")
-fun tagCompound(compound: Consumer<TagCompoundFactory>) {
+fun tagCompound(compound: Consumer<TagCompoundFactory>) =
     tagCompoundOf().also { compound.accept(TagCompoundFactory(it)) }
-}
 
 @Suppress("NOTHING_TO_INLINE")
 class TagCompoundFactory(private val compound: NBTTagCompound) {
