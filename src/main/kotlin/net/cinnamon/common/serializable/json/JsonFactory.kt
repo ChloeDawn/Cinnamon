@@ -107,16 +107,7 @@ fun Array<String>.toJson() = JsonArray().also { this.forEach(it::add) }
 fun Array<JsonElement>.toJson() = JsonArray().also { this.forEach(it::add) }
 
 /**
- * Converts the Array<JsonArray> receiver to a [JsonArray] of JsonElements
- * JsonArray elements are flattened, with each element inserted into the new array
- * @author InsomniaKitten
- * @since 0.1.0
- */
-fun Array<JsonArray>.toJson() = JsonArray().also { this.forEach(it::addAll) }
-
-/**
  * Converts the Array<*> receiver to a [JsonArray] of JsonElements
- * JsonArray elements are not flattened, and will be stored as themselves
  * @author InsomniaKitten
  * @since 0.1.0
  */
