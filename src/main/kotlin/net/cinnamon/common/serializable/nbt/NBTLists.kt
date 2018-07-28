@@ -15,7 +15,7 @@ fun tagListOf() = NBTTagList()
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: NBTBase) = NBTTagList().apply {
-    values.asSequence().forEach(::appendTag)
+    values.forEach(::appendTag)
 }
 
 /**
@@ -79,7 +79,7 @@ fun tagListOf(vararg values: String) = NBTTagList().apply {
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: NBTTagCompound) = NBTTagList().apply {
-    values.asSequence().forEach(::appendTag)
+    values.forEach(::appendTag)
 }
 
 /**
@@ -91,7 +91,7 @@ fun tagListOf(vararg values: NBTTagCompound) = NBTTagList().apply {
 inline fun <reified T> Iterable<T>.toTagList() = asSequence().run {
     NBTTagList().also { list ->
         when (T::class.java) {
-            Boolean::class.java -> map { tagByteOf(if (it as Boolean) 1 else 0) }
+            Boolean::class.java -> map { tagByteOf(it as Boolean) }
             Byte::class.java -> map { tagByteOf(it as Byte) }
             Short::class.java -> map { tagShortOf(it as Short) }
             Int::class.java -> map { tagIntOf(it as Int) }

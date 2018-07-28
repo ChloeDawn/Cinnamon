@@ -12,6 +12,13 @@ import net.minecraft.nbt.*
 fun tagByteOf(value: Byte = 0) = NBTTagByte(value)
 
 /**
+ * Constructs a new [NBTTagByte] from the given [Boolean]
+ * If [value] is `true` the byte will be 1, else it will be 0
+ */
+@JvmName("newTagByte")
+fun tagByteOf(value: Boolean) = NBTTagByte(if (value) 1 else 0)
+
+/**
  * Constructs a new [NBTTagShort] from the given [Short], or 0 if undefined
  */
 @JvmName("newTagShort")
