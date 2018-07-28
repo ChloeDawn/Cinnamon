@@ -40,7 +40,7 @@ fun jsonArrayOf(@Nullable vararg values: Any?) = JsonArray().also {
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Boolean) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Boolean?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -48,7 +48,7 @@ fun jsonArrayOf(vararg values: Boolean) = JsonArray().also { values.forEach(it::
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Double) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Double?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -56,7 +56,7 @@ fun jsonArrayOf(vararg values: Double) = JsonArray().also { values.forEach(it::a
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Float) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Float?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -64,7 +64,7 @@ fun jsonArrayOf(vararg values: Float) = JsonArray().also { values.forEach(it::ad
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Long) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Long?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -72,7 +72,7 @@ fun jsonArrayOf(vararg values: Long) = JsonArray().also { values.forEach(it::add
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Int) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Int?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -80,7 +80,7 @@ fun jsonArrayOf(vararg values: Int) = JsonArray().also { values.forEach(it::add)
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Char) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Char?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -88,7 +88,7 @@ fun jsonArrayOf(vararg values: Char) = JsonArray().also { values.forEach(it::add
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Short) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Short?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -96,7 +96,7 @@ fun jsonArrayOf(vararg values: Short) = JsonArray().also { values.forEach(it::ad
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: Byte) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: Byte?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -104,7 +104,7 @@ fun jsonArrayOf(vararg values: Byte) = JsonArray().also { values.forEach(it::add
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: String) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: String?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -112,7 +112,7 @@ fun jsonArrayOf(vararg values: String) = JsonArray().also { values.forEach(it::a
  * @since 0.1.0
  */
 @JvmName("newJsonArray")
-fun jsonArrayOf(vararg values: JsonElement) = JsonArray().also { values.forEach(it::add) }
+fun jsonArrayOf(@Nullable vararg values: JsonElement?) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -121,7 +121,7 @@ fun jsonArrayOf(vararg values: JsonElement) = JsonArray().also { values.forEach(
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-fun jsonArrayOf(values: Array<*>) = JsonArray().also {
+fun jsonArrayOf(@Nullable values: Array<out Any?>) = JsonArray().also {
     for (obj in values) when (obj) {
         null -> it.add(JsonNull.INSTANCE)
         is Boolean -> it.add(obj)
@@ -140,7 +140,7 @@ fun jsonArrayOf(values: Array<*>) = JsonArray().also {
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: BooleanArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: BooleanArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -149,7 +149,7 @@ inline fun jsonArrayOf(values: BooleanArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: DoubleArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: DoubleArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -158,7 +158,7 @@ inline fun jsonArrayOf(values: DoubleArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: FloatArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: FloatArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -167,7 +167,7 @@ inline fun jsonArrayOf(values: FloatArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: LongArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: LongArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -176,7 +176,7 @@ inline fun jsonArrayOf(values: LongArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: IntArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: IntArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -185,7 +185,7 @@ inline fun jsonArrayOf(values: IntArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: CharArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: CharArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -194,7 +194,7 @@ inline fun jsonArrayOf(values: CharArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: ShortArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: ShortArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -203,7 +203,7 @@ inline fun jsonArrayOf(values: ShortArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: ByteArray) = jsonArrayOf(*values)
+fun jsonArrayOf(values: ByteArray) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -212,7 +212,7 @@ inline fun jsonArrayOf(values: ByteArray) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: Array<String>) = jsonArrayOf(*values)
+fun jsonArrayOf(values: Array<String>) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Creates a new [JsonArray] populated with the given [values]
@@ -221,7 +221,7 @@ inline fun jsonArrayOf(values: Array<String>) = jsonArrayOf(*values)
  */
 @JvmName("newJsonArrayKt")
 @JvmSynthetic
-inline fun jsonArrayOf(values: Array<JsonElement>) = jsonArrayOf(*values)
+fun jsonArrayOf(values: Array<JsonElement>) = JsonArray().also { values.forEach(it::add) }
 
 /**
  * Converts the BooleanArray receiver to a [JsonArray] of Booleans

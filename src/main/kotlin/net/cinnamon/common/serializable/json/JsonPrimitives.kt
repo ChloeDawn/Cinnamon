@@ -1,4 +1,4 @@
-@file:JvmName("Json")
+@file:JvmName("JsonPrimitives")
 
 package net.cinnamon.common.serializable.json
 
@@ -9,25 +9,29 @@ import com.google.gson.JsonPrimitive
  * @author InsomniaKitten
  * @since 0.1.0
  */
-fun Boolean.toJson() = JsonPrimitive(this)
+@JvmName("newJsonPrimitive")
+fun Boolean?.toJson() = JsonPrimitive(this)
 
 /**
  * Converts the Number receiver to a [JsonPrimitive]
  * @author InsomniaKitten
  * @since 0.1.0
  */
-fun Number.toJson() = JsonPrimitive(this)
+@JvmName("newJsonPrimitive")
+fun Number?.toJson() = JsonPrimitive(this)
 
 /**
  * Converts the String receiver to a [JsonPrimitive]
  * @author InsomniaKitten
  * @since 0.1.0
  */
-fun String.toJson() = JsonPrimitive(this)
+@JvmName("newJsonPrimitive")
+fun String?.toJson() = JsonPrimitive(this)
 
 /**
  * Converts the Char receiver to a [JsonPrimitive]
  * @author InsomniaKitten
  * @since 0.1.0
  */
-fun Char.toJson() = JsonPrimitive(this)
+@JvmName("newJsonPrimitive")
+fun Char?.toJson() = JsonPrimitive(this)
