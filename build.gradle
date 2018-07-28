@@ -61,6 +61,7 @@ processResources {
 }
 
 dokka {
+  moduleName = ''
   outputFormat = 'html'
-  outputDirectory = "$buildDir/javadoc"
+  outputDirectory = 'docs'
 }
