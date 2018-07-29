@@ -310,3 +310,11 @@ inline fun Array<JsonElement>.toJsonArray() = jsonArrayOf(this)
  */
 @JvmSynthetic
 inline fun Array<*>.toJsonArray() = jsonArrayOf(this)
+
+/**
+ * Flattens the Array of JsonArrays into an Array of JsonElements
+ * @return an Array of JsonElements collected from the JsonArrays
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun Array<JsonArray>.flatten() = flatMap { it }.toTypedArray()

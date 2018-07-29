@@ -6,14 +6,6 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import java.util.function.Consumer
 
-/**
- * Flattens the Array of JsonArrays into an Array of JsonElements
- * @return an Array of JsonElements collected from the JsonArrays
- * @author InsomniaKitten
- * @since 0.1.0
- */
-fun Array<JsonArray>.flatten() = flatMap { it }.toTypedArray()
-
 @DslMarker
 private annotation class JsonDslMarker
 
