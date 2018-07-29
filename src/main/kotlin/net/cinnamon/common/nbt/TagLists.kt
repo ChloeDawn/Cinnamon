@@ -133,6 +133,7 @@ fun ShortArray.toTagList() = tagListOf(*map(::tagShortOf).toTypedArray())
  */
 @JvmSynthetic
 fun IntArray.toTagList() = tagListOf(*map(::tagIntOf).toTypedArray())
+
 /**
  * Converts the [LongArray] receiver to an [NBTTagList] of [NBTTagLong]s
  * @author InsomniaKitten
