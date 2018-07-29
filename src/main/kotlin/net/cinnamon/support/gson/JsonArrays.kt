@@ -1,7 +1,7 @@
 @file:JvmName("JsonArrays")
 @file:Suppress("NOTHING_TO_INLINE")
 
-package net.cinnamon.common.serializable.json
+package net.cinnamon.support.gson
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement

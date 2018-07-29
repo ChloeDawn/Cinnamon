@@ -1,6 +1,6 @@
 @file:JvmName("JsonObjects")
 
-package net.cinnamon.common.serializable.json
+package net.cinnamon.support.gson
 
 import com.google.gson.JsonElement
 import com.google.gson.JsonNull
