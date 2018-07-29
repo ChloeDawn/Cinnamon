@@ -4,6 +4,7 @@ package net.cinnamon.support.gson
 
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import org.jetbrains.annotations.Nullable
 import java.util.function.Consumer
 
 @DslMarker
@@ -42,7 +43,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmName("add")
-    operator fun String.invoke(value: Boolean) =
+    operator fun String.invoke(value: Boolean?) =
         jsonObject.addProperty(this, value)
 
     /**
@@ -51,7 +52,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.to(value: Boolean) = this(value)
+    inline infix fun String.to(value: Boolean?) = this(value)
 
     /**
      * Appends the given Boolean [value] to the receiver key in the [jsonObject]
@@ -59,7 +60,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.with(value: Boolean) = this(value)
+    inline infix fun String.with(value: Boolean?) = this(value)
 
     /**
      * Appends the given Char [value] to the receiver key in the [jsonObject] delegate
@@ -67,7 +68,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmName("add")
-    operator fun String.invoke(value: Char) =
+    operator fun String.invoke(value: Char?) =
         jsonObject.addProperty(this, value)
 
     /**
@@ -76,7 +77,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.to(value: Char) = this(value)
+    inline infix fun String.to(value: Char?) = this(value)
 
     /**
      * Appends the given Char [value] to the receiver key in the [jsonObject] delegate
@@ -84,7 +85,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.with(value: Char) = this(value)
+    inline infix fun String.with(value: Char?) = this(value)
 
     /**
      * Appends the given Number [value] to the receiver key in the [jsonObject] delegate
@@ -92,7 +93,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmName("add")
-    operator fun String.invoke(value: Number) =
+    operator fun String.invoke(value: Number?) =
         jsonObject.addProperty(this, value)
 
     /**
@@ -101,7 +102,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.to(value: Number) = this(value)
+    inline infix fun String.to(value: Number?) = this(value)
 
     /**
      * Appends the given Number [value] to the receiver key in the [jsonObject] delegate
@@ -109,7 +110,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.with(value: Number) = this(value)
+    inline infix fun String.with(value: Number?) = this(value)
 
     /**
      * Appends the given String [value] to the receiver key in the [jsonObject] delegate
@@ -117,7 +118,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmName("add")
-    operator fun String.invoke(value: String) =
+    operator fun String.invoke(value: String?) =
         jsonObject.addProperty(this, value)
 
     /**
@@ -126,7 +127,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.to(value: String) = this(value)
+    inline infix fun String.to(value: String?) = this(value)
 
     /**
      * Appends the given String [value] to the receiver key in the [jsonObject] delegate
@@ -134,7 +135,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline infix fun String.with(value: String) = this(value)
+    inline infix fun String.with(value: String?) = this(value)
 
     /**
      * Appends the [JsonObject] generated from the factory [obj] to the receiver key in the [jsonObject] delegate
@@ -177,7 +178,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmName("array")
-    operator fun String.invoke(vararg values: Any?) =
+    operator fun String.invoke(@Nullable vararg values: Any?) =
         jsonObject.add(this, values.toJsonArray())
 
     /**
@@ -186,7 +187,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline fun String.to(vararg values: Any?) = this(*values)
+    inline fun String.to(@Nullable vararg values: Any?) = this(*values)
 
     /**
      * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
@@ -194,7 +195,7 @@ class JsonObjectFactory(private val jsonObject: JsonObject) {
      * @since 0.1.0
      */
     @JvmSynthetic
-    inline fun String.with(vararg values: Any?) = this(*values)
+    inline fun String.with(@Nullable vararg values: Any?) = this(*values)
 
     /**
      * Appends a [JsonArray] containing the given [values] to the receiver key in the [jsonObject] delegate
