@@ -1,17 +1,21 @@
-@file:JvmName("NBTLists")
+@file:JvmName("TagLists")
 
-package net.cinnamon.common.serializable.nbt
+package net.cinnamon.common.nbt
 
 import net.minecraft.nbt.*
 
 /**
- * Constructs a new [NBTTagList]
+ * Constructs a new empty [NBTTagList]
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf() = NBTTagList()
 
 /**
- * Constructs a new [NBTTagList], appending the given [NBTBase] values
+ * Constructs a new [NBTTagList] populated with the given [NBTBase] values
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: NBTBase) = NBTTagList().apply {
@@ -19,7 +23,9 @@ fun tagListOf(vararg values: NBTBase) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Byte] values as [NBTTagByte]s
+ * Constructs a new [NBTTagList], populated with the given [Byte] values as [NBTTagByte]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Byte) = NBTTagList().apply {
@@ -27,7 +33,9 @@ fun tagListOf(vararg values: Byte) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Short] values as [NBTTagShort]s
+ * Constructs a new [NBTTagList], populated with the given [Short] values as [NBTTagShort]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Short) = NBTTagList().apply {
@@ -35,7 +43,9 @@ fun tagListOf(vararg values: Short) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Int] values as [NBTTagInt]s
+ * Constructs a new [NBTTagList], populated with the given [Int] values as [NBTTagInt]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Int) = NBTTagList().apply {
@@ -43,7 +53,9 @@ fun tagListOf(vararg values: Int) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Long] values as [NBTTagLong]s
+ * Constructs a new [NBTTagList], populated with the given [Long] values as [NBTTagLong]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Long) = NBTTagList().apply {
@@ -51,7 +63,9 @@ fun tagListOf(vararg values: Long) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Float] values as [NBTTagFloat]s
+ * Constructs a new [NBTTagList], populated with the given [Float] values as [NBTTagFloat]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Float) = NBTTagList().apply {
@@ -59,7 +73,9 @@ fun tagListOf(vararg values: Float) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [Double] values as [NBTTagDouble]s
+ * Constructs a new [NBTTagList], populated with the given [Double] values as [NBTTagDouble]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: Double) = NBTTagList().apply {
@@ -67,7 +83,9 @@ fun tagListOf(vararg values: Double) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [String] values as [NBTTagString]s
+ * Constructs a new [NBTTagList], populated with the given [String] values as [NBTTagString]s
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: String) = NBTTagList().apply {
@@ -75,7 +93,9 @@ fun tagListOf(vararg values: String) = NBTTagList().apply {
 }
 
 /**
- * Constructs a new [NBTTagList], appending the given [NBTTagCompound] values
+ * Constructs a new [NBTTagList], populated with the given [NBTTagCompound] values
+ * @author InsomniaKitten
+ * @since 0.1.0
  */
 @JvmName("newTagList")
 fun tagListOf(vararg values: NBTTagCompound) = NBTTagList().apply {
@@ -87,6 +107,7 @@ fun tagListOf(vararg values: NBTTagCompound) = NBTTagList().apply {
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun Array<NBTBase>.toTagList() = tagListOf(*this)
 
 /**
@@ -94,6 +115,7 @@ fun Array<NBTBase>.toTagList() = tagListOf(*this)
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun ByteArray.toTagList() = tagListOf(*map(::tagByteOf).toTypedArray())
 
 /**
@@ -101,6 +123,7 @@ fun ByteArray.toTagList() = tagListOf(*map(::tagByteOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun ShortArray.toTagList() = tagListOf(*map(::tagShortOf).toTypedArray())
 
 /**
@@ -108,12 +131,14 @@ fun ShortArray.toTagList() = tagListOf(*map(::tagShortOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun IntArray.toTagList() = tagListOf(*map(::tagIntOf).toTypedArray())
 /**
  * Converts the [LongArray] receiver to an [NBTTagList] of [NBTTagLong]s
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun LongArray.toTagList() = tagListOf(*map(::tagLongOf).toTypedArray())
 
 /**
@@ -121,6 +146,7 @@ fun LongArray.toTagList() = tagListOf(*map(::tagLongOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun FloatArray.toTagList() = tagListOf(*map(::tagFloatOf).toTypedArray())
 
 /**
@@ -128,6 +154,7 @@ fun FloatArray.toTagList() = tagListOf(*map(::tagFloatOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun DoubleArray.toTagList() = tagListOf(*map(::tagDoubleOf).toTypedArray())
 
 /**
@@ -135,6 +162,7 @@ fun DoubleArray.toTagList() = tagListOf(*map(::tagDoubleOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun Array<String>.toTagList() = tagListOf(*map(::tagStringOf).toTypedArray())
 
 /**
@@ -142,4 +170,5 @@ fun Array<String>.toTagList() = tagListOf(*map(::tagStringOf).toTypedArray())
  * @author InsomniaKitten
  * @since 0.1.0
  */
+@JvmSynthetic
 fun BooleanArray.toTagList() = tagListOf(*map(::tagByteOf).toTypedArray())

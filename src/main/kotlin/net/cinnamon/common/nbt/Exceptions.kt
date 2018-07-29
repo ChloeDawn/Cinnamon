@@ -1,4 +1,4 @@
-package net.cinnamon.common.serializable.nbt
+package net.cinnamon.common.nbt
 
 import net.minecraft.nbt.NBTBase
 

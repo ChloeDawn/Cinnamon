@@ -1,6 +1,7 @@
-@file:JvmName("NBTFactory")
+@file:JvmName("TagCompounds")
+@file:JvmMultifileClass
 
-package net.cinnamon.common.serializable.nbt
+package net.cinnamon.common.nbt
 
 import com.mojang.authlib.GameProfile
 import net.minecraft.block.state.IBlockState
@@ -25,7 +26,7 @@ private annotation class NBTDslMarker
  * @since 0.1.0
  */
 @NBTDslMarker
-@JvmName("createTagCompound")
+@JvmName("newTagCompound")
 @JvmSynthetic
 fun tagCompound(compound: TagCompoundFactory.() -> Unit) =
     tagCompoundOf().also { compound.invoke(TagCompoundFactory(it)) }
@@ -38,7 +39,7 @@ fun tagCompound(compound: TagCompoundFactory.() -> Unit) =
  * @since 0.1.0
  */
 @NBTDslMarker
-@JvmName("createTagCompound")
+@JvmName("newTagCompound")
 fun tagCompound(compound: Consumer<TagCompoundFactory>) =
     tagCompoundOf().also { compound.accept(TagCompoundFactory(it)) }
 
