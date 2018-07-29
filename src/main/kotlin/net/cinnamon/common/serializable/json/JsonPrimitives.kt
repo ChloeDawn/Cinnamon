@@ -7,7 +7,7 @@ import com.google.gson.JsonNull
 import com.google.gson.JsonPrimitive
 
 /**
- * Converts the Boolean receiver to a [JsonPrimitive]
+ * Returns the Boolean receiver as a [JsonPrimitive], or [JsonNull.INSTANCE] if the receiver is `null`
  * @author InsomniaKitten
  * @since 0.1.0
  */
@@ -15,7 +15,7 @@ import com.google.gson.JsonPrimitive
 fun Boolean?.toJson(): JsonElement = this?.let(::JsonPrimitive) ?: JsonNull.INSTANCE
 
 /**
- * Converts the Number receiver to a [JsonPrimitive]
+ * Returns the Number receiver as a [JsonPrimitive], or [JsonNull.INSTANCE] if the receiver is `null`
  * @author InsomniaKitten
  * @since 0.1.0
  */
@@ -23,7 +23,7 @@ fun Boolean?.toJson(): JsonElement = this?.let(::JsonPrimitive) ?: JsonNull.INST
 fun Number?.toJson(): JsonElement = this?.let(::JsonPrimitive) ?: JsonNull.INSTANCE
 
 /**
- * Converts the String receiver to a [JsonPrimitive]
+ * Returns the String receiver as a [JsonPrimitive], or [JsonNull.INSTANCE] if the receiver is `null`
  * @author InsomniaKitten
  * @since 0.1.0
  */
@@ -31,7 +31,7 @@ fun Number?.toJson(): JsonElement = this?.let(::JsonPrimitive) ?: JsonNull.INSTA
 fun String?.toJson(): JsonElement = this?.let(::JsonPrimitive) ?: JsonNull.INSTANCE
 
 /**
- * Converts the Char receiver to a [JsonPrimitive]
+ * Returns the Char receiver as a [JsonPrimitive], or [JsonNull.INSTANCE] if the receiver is `null`
  * @author InsomniaKitten
  * @since 0.1.0
  */
