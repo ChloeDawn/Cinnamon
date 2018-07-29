@@ -71,3 +71,17 @@ fun jsonObjectOf(vararg elements: Pair<String, Any?>) = JsonObject().apply {
         else -> error("Unsupported type $value for JsonObject value")
     }
 }
+
+/**
+ * Filters [JsonNull.INSTANCE] values from the receiver [JsonObject]
+ * @author InsomniaKitten
+ * @since 0.1.0
+ */
+fun JsonObject.filterNotNull() = apply {
+    val it = entrySet().iterator()
+    while (it.hasNext()) {
+        if (JsonNull.INSTANCE == it.next().value) {
+            it.remove()
+        }
+    }
+}
