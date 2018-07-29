@@ -1,4 +1,5 @@
-@file:JvmName("JsonFactory")
+@file:JvmName("JsonObjects")
+@file:JvmMultifileClass
 
 package net.cinnamon.support.gson
 
@@ -18,7 +19,7 @@ private annotation class JsonDslMarker
  * @since 0.1.0
  */
 @JsonDslMarker
-@JvmName("createJson")
+@JvmName("newJsonObject")
 @JvmSynthetic
 fun json(json: JsonObjectFactory.() -> Unit) =
     JsonObject().also { json.invoke(JsonObjectFactory(it)) }
@@ -31,7 +32,7 @@ fun json(json: JsonObjectFactory.() -> Unit) =
  * @since 0.1.0
  */
 @JsonDslMarker
-@JvmName("createJson")
+@JvmName("newJsonObject")
 fun json(json: Consumer<JsonObjectFactory>) =
     JsonObject().also { json.accept(JsonObjectFactory(it)) }
 

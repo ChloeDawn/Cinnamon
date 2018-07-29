@@ -1,4 +1,5 @@
 @file:JvmName("JsonObjects")
+@file:JvmMultifileClass
 
 package net.cinnamon.support.gson
 
