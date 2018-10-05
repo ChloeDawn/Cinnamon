@@ -52,7 +52,7 @@ infix fun IItemHandler.indexOf(item: Item) =
 
 @JvmName("createIterator")
 operator fun IItemHandler.iterator() =
-    (0 until slots).map(::getStackInSlot).iterator()
+    ItemHandlerIterator(this) as Iterator<ItemStack>
 
 @JvmSynthetic
 inline fun IItemHandler.asSequence() =
@@ -85,3 +85,16 @@ fun IItemHandler.toMutableNonNullList() =
 @JvmSynthetic
 inline fun IItemHandler.forEach(action: (ItemStack) -> Unit) =
     iterator().forEach(action)
+
+private class ItemHandlerIterator(
+    private val handler: IItemHandler
+) : AbstractIterator<ItemStack>() {
+    private val size = handler.slots
+    private var curr = 0
+
+    override fun computeNext() {
+        if (curr < size) {
+            handler[curr++]
+        } else done()
+    }
+}
